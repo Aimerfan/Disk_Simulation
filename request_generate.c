@@ -4,7 +4,7 @@
 #include <time.h>
 
 int mode = 0;
-int rlimit = 10;
+int rlimit = 15;
 char* algo[] = { "FCFS", "SSTF", "SCAN", "LOOK", "CSCAN", "CLOOK" };
 
 void help(){

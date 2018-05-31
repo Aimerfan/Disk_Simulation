@@ -76,8 +76,10 @@ int main(int argc, char* argv[]){
 	cout << "Algorithm : " << localdisk_D.get_algo() << '\n';
 	cout << "Total cylinders : " << localdisk_D.get_cylinders() << '\n';
 	cout << "Init head seat : " << localdisk_D.get_current_headseat() << '\n';
-	cout << "Init direct : " << localdisk_D.get_current_direct() << '\n' << endl;
-	cout << "Head track : " << '\n'; 
+	cout << "Init direct : " << localdisk_D.get_current_direct() << '\n';
+	cout << "Disk requests : " << endl;
+	localdisk_D.show_all_request();
+	cout << '\n' << "Head track : " << '\n'; 
 	while((tmp = localdisk_D.schedule()) != NVR) cout << tmp.str() << endl;
 	cout << "\ntotal moved cylinders : " << localdisk_D.get_total_cylinders() << endl;
 	
