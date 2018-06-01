@@ -163,8 +163,8 @@ request disk::scan(){
 	request ret;
 	if(direct == 0){
 		for(lrit it = request_set.begin(); it != request_set.end(); it++){
-			if(next == request_set.end() && it->track_num > currcyld) next = it; 
-			else if(it->track_num > currcyld && it->track_num - currcyld < next->track_num - currcyld) next = it;
+			if(next == request_set.end() && it->track_num >= currcyld) next = it; 
+			else if(it->track_num >= currcyld && it->track_num - currcyld < next->track_num - currcyld) next = it;
 		}
 		if(next == request_set.end()) ret = request(0.0, cylinders - 1);
 		else ret = *next;
@@ -215,8 +215,8 @@ request disk::cscan(){
 	request ret;
 	if(direct == 0){
 		for(lrit it = request_set.begin(); it != request_set.end(); it++){
-			if(next == request_set.end() && it->track_num > currcyld) next = it; 
-			else if(it->track_num > currcyld && it->track_num - currcyld < next->track_num - currcyld) next = it;
+			if(next == request_set.end() && it->track_num >= currcyld) next = it; 
+			else if(it->track_num >= currcyld && it->track_num - currcyld < next->track_num - currcyld) next = it;
 		}
 		if(next == request_set.end()) ret = request(0.0, cylinders - 1);
 		else ret = *next;
